@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Member;
+use App\Models\Candidate;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -9,6 +9,6 @@ Route::get('/', function () {
 });
 
 Route::get('test', function () {
-    $temp = Member::find(1);
-    return $temp->interviewer_comment;
+    $temp = Candidate::find(1);
+    return $temp->skills;
 });

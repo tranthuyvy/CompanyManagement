@@ -15,7 +15,7 @@ class Member extends Model
     ];
 
     protected $hidden = [
-        'password'
+        'password', 'pivot',
     ];
 
     public function teams()
