@@ -17,4 +17,29 @@ class Interview extends Model
     protected $hidden = [
         'pivot'
     ];
+
+    public function candidate()
+    {
+        return $this->belongsTo(Candidate::class, 'candidate_id', 'id');
+    }
+
+    public function position()
+    {
+        return $this->belongsTo(Configuration::class, 'position_id', 'id');
+    }
+
+    public function interviewers()
+    {
+        return $this->hasMany(interviewer::class, 'interview_id', 'id');
+    }
+
+    public function member_interviewers()
+    {
+        return $this->belongsToMany(Member::class, Interviewer::class, 'interview_id', 'member_id');
+    }
+
+    public function comment_interviewers()
+    {
+        return $this->hasManyThrough(InterviewerComment::class, Interviewer::class, 'interview_id', 'interviewer_id', 'id', 'id');
+    }
 }
