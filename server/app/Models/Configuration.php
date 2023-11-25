@@ -13,4 +13,8 @@ class Configuration extends Model
         'id', 'del_flag', 'value', 'description', 'type',
         'created_at', 'updated_at'
     ];
+
+    protected $hidden = [
+        'pivot'
+    ];
 }

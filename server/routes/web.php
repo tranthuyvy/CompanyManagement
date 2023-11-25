@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Candidate;
+use App\Models\CandidateSkill;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -9,6 +9,6 @@ Route::get('/', function () {
 });
 
 Route::get('test', function () {
-    $temp = Candidate::find(1);
-    return $temp->skills;
+    $temp = CandidateSkill::find(1);
+    return $temp->skill;
 });
