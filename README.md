@@ -1,2 +1,3 @@
 # CompanyManagement
-Description
+
+MiniProject using React - Laravel
